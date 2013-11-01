@@ -27,5 +27,9 @@ tar xzf nrn-7.3.tar.gz
   test -z "$BASEPREFIX/nrn/share/nrn/demo/release" || /bin/mkdir -p "$BASEPREFIX/nrn/share/nrn/demo/release" ;
 
   checkinstall --pkgname=neuron-nrn
+
+  ( cd src/nrnpython ;
+    checkinstall --pkgname=neuron-nrn-python python setup.py install ;
+    )
   )
 
